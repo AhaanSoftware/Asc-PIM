@@ -13,7 +13,7 @@ import ProductManagement from './components/Pages/ProductManagement';
 import SalesOrderManagement from './components/Pages/SalesOrderManagement';
 import SuppliersPerchase from './components/Pages/SuppliersPerchase';
 import UserManagement from './components/Pages/UserManagement';
-
+import AddProduct from './components/Pages/Productmanagement/AddProduct';
 function App() {
   return (
     <Router>
@@ -30,6 +30,7 @@ function App() {
               <Route path="/help-support" element={<HelpSupport />} />
               <Route path="/inventory-collection" element={<InventoryCollection />} />
               <Route path="/product-management" element={<ProductManagement />} />
+              <Route path="/product-management/add-product" element={<AddProduct />} />
               <Route path="/sales-order-management" element={<SalesOrderManagement />} />
               <Route path="/suppliers-perchase" element={<SuppliersPerchase />} />
               <Route path="/user-management" element={<UserManagement />} />
