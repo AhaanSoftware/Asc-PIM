@@ -8,7 +8,7 @@ const ProductManagement = () => {
   const navigate = useNavigate();
 
   const handleAddProduct = () => {
-    navigate('/product-management/add-product'); // Navigate to the AddProduct component
+    navigate('/product-management/add-product'); 
   };
 
   const handleOpenModal = () => {
