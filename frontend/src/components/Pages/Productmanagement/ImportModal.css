@@ -20,6 +20,7 @@
   text-align: left; 
   width: 90%; 
   box-sizing: border-box;
+  box-shadow: 0 2px 8px 0 rgba(123, 157, 251, 0.19), 0 3px 10px 0 rgba(123, 157, 251, 0.19);
 }
 
 .header-modal {
@@ -37,7 +38,7 @@
   right: 10px;
   font-size: 20px;
   cursor: pointer;
-  color: #888;
+  
 }
 
 .close-modal-icon {
@@ -86,7 +87,7 @@
   font-size: 12px;
 }
 .upload-btn:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Apply shadow on hover */
+  box-shadow: 0 2px 8px 0 rgba(123, 157, 251, 0.19), 0 3px 10px 0 rgba(123, 157, 251, 0.19);
 }
 
 .modal-actions {
@@ -118,7 +119,7 @@
 
 
 .btn:hover {
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  box-shadow: 0 2px 8px 0 rgba(123, 157, 251, 0.19), 0 3px 10px 0 rgba(123, 157, 251, 0.19);
 }
 
 .footer-modal-btn{
@@ -133,7 +134,7 @@
   border-radius: 10px;
   font-size: 12px;
   &:hover{
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px 0 rgba(123, 157, 251, 0.19), 0 3px 10px 0 rgba(123, 157, 251, 0.19);
   }
 }
 .upload-preview-btn-footer{
@@ -144,11 +145,47 @@
   border-radius: 10px;
   font-size: 12px;
   &:hover{
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px 0 rgba(123, 157, 251, 0.19), 0 3px 10px 0 rgba(123, 157, 251, 0.19);
   }
 }
 .cancel-btn-footer, .upload-preview-btn-footer {
   margin-right: 10px; 
+}
+.file-info {
+  width:100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius:8px;
+  justify-content: space-between;
+}
+
+.file-icon {
+  font-size: 2rem;
+  padding: 20px;
+  background-color: #ddd;
+  border-top-left-radius:8px;
+  border-bottom-left-radius: 8px;
+  border-right: 1px solid rgb(177, 177, 177);
+}
+
+
+
+.file-name {
+  flex: 1;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.replace-file-btn {
+
+  font-size:14px;
+  border: 0.15px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+  
 }
 
 
