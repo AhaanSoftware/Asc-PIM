@@ -79,7 +79,7 @@
   margin-bottom: 10px;
 }
 .upload-btn {
-  background-color: transparent; /* Green background for the upload button */
+  background-color: transparent; 
   color: rgb(0, 0, 0);
   border: 0.5px solid rgb(192, 192, 192);
   padding:4px 14px;
@@ -127,7 +127,7 @@
   
 }
 .cancel-btn-footer{
-  background-color: transparent; /* Green background for the upload button */
+  background-color: transparent; 
   color: rgb(0, 0, 0);
   border: 0.5px solid rgb(192, 192, 192);
   padding:4px 14px;
