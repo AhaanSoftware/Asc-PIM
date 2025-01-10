@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { BsList, BsHouse, BsBox, BsLayers, BsCart, BsGraphUp, BsPeople, BsGear, BsQuestionCircle, BsEnvelope, BsInfoCircle } from "react-icons/bs";
 import "./Sidebar.css";
 import logo from "../image/logo.png";
 
-const Sidebar = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
+const Sidebar = ({ setSidebarCollapsed, isCollapsed }) => {
   const toggleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
+    // Toggle the collapsed state of the sidebar
+    setSidebarCollapsed(!isCollapsed);
   };
 
   return (
@@ -34,73 +33,45 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            to="/product-management"
-            className="nav-link"
-            activeClassName="active"
-          >
+          <NavLink to="/product-management" className="nav-link" activeClassName="active">
             <BsBox className="nav-icon" />
             {!isCollapsed && "Product Management"}
           </NavLink>
         </li>
         <hr />
         <li className="nav-item">
-          <NavLink
-            to="/inventory-collection"
-            className="nav-link"
-            activeClassName="active"
-          >
+          <NavLink to="/inventory-collection" className="nav-link" activeClassName="active">
             <BsLayers className="nav-icon" />
             {!isCollapsed && "Inventory Collection"}
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            to="/sales-order-management"
-            className="nav-link"
-            activeClassName="active"
-          >
+          <NavLink to="/sales-order-management" className="nav-link" activeClassName="active">
             <BsCart className="nav-icon" />
             {!isCollapsed && "Sales Order Management"}
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            to="/analytics-reporting"
-            className="nav-link"
-            activeClassName="active"
-          >
+          <NavLink to="/analytics-reporting" className="nav-link" activeClassName="active">
             <BsGraphUp className="nav-icon" />
             {!isCollapsed && "Analytics Reporting"}
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            to="/suppliers-perchase"
-            className="nav-link"
-            activeClassName="active"
-          >
+          <NavLink to="/suppliers-perchase" className="nav-link" activeClassName="active">
             <BsPeople className="nav-icon" />
             {!isCollapsed && "Suppliers Perchase"}
           </NavLink>
         </li>
         <hr />
         <li className="nav-item">
-          <NavLink
-            to="/help-support"
-            className="nav-link"
-            activeClassName="active"
-          >
+          <NavLink to="/help-support" className="nav-link" activeClassName="active">
             <BsQuestionCircle className="nav-icon" />
             {!isCollapsed && "Help Support"}
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            to="/user-management"
-            className="nav-link"
-            activeClassName="active"
-          >
+          <NavLink to="/user-management" className="nav-link" activeClassName="active">
             <BsGear className="nav-icon" />
             {!isCollapsed && "User Management"}
           </NavLink>

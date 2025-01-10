@@ -1,14 +1,14 @@
-/* Sidebar Container */
 .sidebar {
-    width: 240px;
-    height: 100vh;
-    background-color: #343a40; /* Dark gray background */
-    color: #fff; /* White text color */
-    display: flex;
-    flex-direction: column;
-    transition: width 0.3s ease;
-    z-index: 1000;
-  }
+  position: fixed;
+  width: 240px;  /* Default width */
+  height: 100vh;
+  background-color: #343a40; /* Dark gray background */
+  color: #fff; /* White text color */
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease; /* Smooth transition for width change */
+  z-index: 1000; /* Ensures the sidebar is on top */
+}
   
   /* Sidebar Collapsed Style */
   .sidebar.collapsed {
