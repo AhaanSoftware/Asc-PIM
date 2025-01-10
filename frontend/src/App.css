@@ -64,14 +64,6 @@ body {
   flex-direction: column;
 }
 
-.header {
-  height: 60px;
-  background-color: #f8f9fa;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #ddd;
-}
-
 .search-bar input {
   width: 300px;
 }
@@ -98,4 +90,7 @@ body {
   .search-bar input {
     width: 150px;
   }
+}
+.content-wrapper.p-4 {
+  background: #fafbfc;
 }
