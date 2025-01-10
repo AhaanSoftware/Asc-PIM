@@ -4,7 +4,7 @@ import ReactQuill from "react-quill";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "react-quill/dist/quill.snow.css";
-import "./ProductManagement.css";
+import "./AddProduct.css";
 
 const AddProduct = () => {
   const {
