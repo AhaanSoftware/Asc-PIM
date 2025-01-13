@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Table, FormControl, InputGroup, FormCheck } from 'react-bootstrap';
 import './InventoryCollection.css'; // Import the external CSS file
+import MonthlyChart from './MonthlyChart';
+
 
 const InventoryCollection = () => {
   const [inventoryData, setInventoryData] = useState([]);
@@ -90,6 +92,10 @@ const InventoryCollection = () => {
           />
         </InputGroup>
       </div>
+      <div>
+      <MonthlyChart/>
+      </div>
+      
       <Table striped bordered hover responsive className="inventory-table">
         <thead>
           <tr>

@@ -12,7 +12,12 @@
   .search-bar {
     max-width: 300px;
   }
+<<<<<<< HEAD
+ 
+  /* Table style */
+=======
   
+>>>>>>> 55a4638107b2341748d470e3d9c1ad467836260f
   .inventory-table {
     width: 100%;
     border-collapse: collapse; 
