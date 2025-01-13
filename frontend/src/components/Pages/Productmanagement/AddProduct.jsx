@@ -1,12 +1,16 @@
 import React, { useState, useRef } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import ReactQuill from "react-quill";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "react-quill/dist/quill.snow.css";
-import "./ProductManagement.css";
+import "./AddProduct.css";
 
-const AddProduct = () => {
+const AddProduct = ({ setProductData }) => {
+
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -44,6 +48,8 @@ const AddProduct = () => {
       return;
     }
     console.log("Form Data:", formData);
+    setProductData((prevData) => [...prevData, formData]); // Save to global state
+    navigate("/about");
 
     if (data.file && data.file[0]) {
       console.log("Uploaded File:", data.file[0].name);

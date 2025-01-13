@@ -1,14 +1,15 @@
 /* Sidebar Container */
 .sidebar {
-    width: 240px;
-    height: 100vh;
-    background-color: #343a40; /* Dark gray background */
-    color: #fff; /* White text color */
-    display: flex;
-    flex-direction: column;
-    transition: width 0.3s ease;
-    z-index: 1000;
-  }
+  width: 240px;
+  height: 100vh;
+  background-color: #343a40; /* Dark gray background */
+  color: #fff; /* White text color */
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  z-index: 1000; /* Ensures the sidebar is above other content */
+  overflow: hidden; /* Prevents overflow when collapsed */
+}
   
   /* Sidebar Collapsed Style */
   .sidebar.collapsed {
@@ -103,7 +104,7 @@
   /* Active menu item styling */
   .nav-link.active {
     background-color: #283890; /* Blue background for active menu */
-    color: #F78D1E !important; /* White text for active menu */
+    color: #fff !important; /* White text for active menu */
     font-weight: 600;
   font-size: 12px;
   }

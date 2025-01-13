@@ -1,0 +1,79 @@
+.form-container {
+    max-width: 1300px;
+    margin: auto;
+    border-radius: 8px;
+    margin-left: 0px;
+    
+  }
+  
+  textarea.form-control {
+    resize: none;
+  }
+  
+  .media-upload-box {
+    border: 1px dashed #ccc;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-radius: 5px;
+    height: 150px;
+  }
+  
+  .media-upload-box .btn {
+    
+    border-radius: 3px;
+    padding: 5px 15px;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  .media-upload-box .btn-outline-primary {
+    border: 1px solid #007bff;
+    color: #007bff;
+  }
+  
+  .media-upload-box .btn-outline-secondary {
+    border: 1px solid #6c757d;
+    color: #6c757d;
+  }
+  
+  .media-upload-box p {
+    margin-top: 10px;
+    color: #6c757d;
+    font-size: 12px;
+  }
+  
+  
+  .info-icon {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    color: gray;
+  }
+  
+  .box-container{
+    box-shadow: 0 2px 8px 0 rgba(123, 157, 251, 0.19), 0 3px 10px 0 rgba(123, 157, 251, 0.19);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  
+  }
+  .mt-5{
+    margin-top: 0rem !important
+  }
+  button.btn.btn-primary{
+    background-color: #283890;
+    border: none !important;
+  }
+  h5.mb-4{
+    font-size: 17px;
+    color: #283890 ;
+    font-weight: 500;
+  }
+  div#description{
+    height: 200px;
+    border: none !important;
+    margin-bottom: 50px;
+  }
