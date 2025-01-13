@@ -1,173 +1,55 @@
 .sidebar {
   position: fixed;
-  width: 240px;  /* Default width */
+  width: 240px;  
   height: 100vh;
-  background-color: #343a40; /* Dark gray background */
-  color: #fff; /* White text color */
+  background-color: #343a40; 
+  color: #fff; 
   display: flex;
   flex-direction: column;
-  transition: width 0.3s ease; /* Smooth transition for width change */
-  z-index: 1000; /* Ensures the sidebar is on top */
+  transition: width 0.3s ease; 
+  z-index: 1000; 
 }
-  
-  /* Sidebar Collapsed Style */
-  .sidebar.collapsed {
-    width: 70px; /* Collapsed sidebar width */
-  }
-  
-  .sidebar-header {
-    padding: 16px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #555555; /* Darker header background */
-  }
-  
-  /* Navigation Menu */
-  .nav {
-    flex-grow: 1;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  .nav-item {
-    width: 100%;
-  }
-  
-  .nav-link {
-    display: flex;
-    align-items: center;
-    padding: 12px 16px;
-    color: #ccc;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    background-color: #495057; /* Lighter gray on hover */
-    color: #fff;
-  }
-  
-  .nav-link .me-2 {
-    margin-right: 12px; /* Space between icon and text */
-    font-size: 15px; /* Icon size */
-  }
-  
-  /* Sidebar Footer for Collapsed Mode */
-  .sidebar-footer {
-    padding: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #495057;
-    background-color: #212529;
-  }
-  
-  .sidebar-footer .btn {
-    background: none;
-    border: none;
-    color: #ccc;
-    font-size: 20px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .sidebar-footer .btn:hover {
-    color: #fff;
-  }
-  
-  .sidebar-footer .theme-label {
-    margin-left: 10px;
-    font-size: 14px;
-  }
-  .logo-img {
-    max-width: 200px; /* Set max width for the logo */
-    height: auto; /* Maintain aspect ratio */
-    display: block;
-    margin: 0 auto; /* Center the logo horizontally */
-  }
-
-  /* Default nav-link styling */
-.nav-link {
-    display: flex;
-    align-items: center;
-    padding: 12px 16px;
-    color: #ccc; /* Default text color */
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  
-  
-  /* Active menu item styling */
-  .nav-link.active {
-    background-color: #283890; /* Blue background for active menu */
-    color: #F78D1E !important; /* White text for active menu */
-    font-weight: 600;
-  font-size: 12px;
-  }
-  hr{
-    color: #F78D1E;
-  }
-  
-
-  
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 70px;
-    }
-  
-    .sidebar.collapsed {
-      width: 50px;
-    }
-  
-    .nav-link span {
-      display: none;
-    }
-  
-    .sidebar-header {
-      font-size: 16px;
-    }
-  }
-  
- 
-
-
 .sidebar.collapsed {
-  width: 70px; /* Collapsed sidebar width */
+  width: 70px; 
 }
-
-/* Sidebar Header */
 .sidebar-header {
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #212529; /* Darker header background */
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #555555; 
+  width: 100%;
 }
 
 .logo-img {
-  max-width: 100%;
-  height: auto;
+  max-width: 180px; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
   transition: transform 0.3s ease;
 }
 
 .collapsed-logo {
-  transform: scale(0.5); /* Shrink logo for collapsed sidebar */
+  transform: scale(0.5); 
 }
 
-/* Toggle Button */
+.icon-container {
+  padding-left: 10px;
+  position: relative;
+  cursor: pointer; 
+}
+
 .toggle-btn {
   background: none;
   border: none;
   color: #283890;
   font-size: 25px;
   cursor: pointer;
+  display: none; 
 }
 
-/* Navigation Menu */
 .nav {
   flex-grow: 1;
   padding: 0;
@@ -178,13 +60,112 @@
 .nav-item {
   width: 100%;
 }
+
+.nav-link.active {
+  background-color: #283890; 
+  color: #F78D1E !important; 
+  font-weight: 600;
+  font-size: 12px;
+}
+
+hr {
+  color: #F78D1E;
+}
+
+.sidebar-header {
+  align-items: center;
+  justify-content: space-between;
+  
+  background-color: #212529; 
+  position: relative; 
+}
+
 .nav-icon {
   margin-right: 10px;
   font-size: 18px;
 }
 
 
+@media (max-width: 768px) {
+  .sidebar {
+    width: 160px;
+    
+  }
 
+  .sidebar.collapsed {
+    width: 60px;
+  }
 
+  .nav-link span {
+    display: none;
+  }
 
-  
+  .sidebar-header {
+    font-size: 16px;
+  }
+  .icon-container {
+    padding-left: 0px;
+    position: relative;
+    cursor: pointer; 
+  }
+}
+@media (max-width: 420px) {
+  .sidebar {
+    width: 60px; /* Further reduce sidebar width on very small screens */
+  }
+
+  .sidebar.collapsed {
+    width: 30px; /* Keep collapsed width */
+  }
+
+  .sidebar-header {
+    font-size: 14px; 
+    padding:0px;
+  }
+
+  .logo-img {
+    max-width: 100px; /* Further reduce logo size */
+  }
+
+  .icon-container {
+    right: 5px; /* Ensure icon is close to the edge on smaller devices */
+  }
+
+  /* For mobile screens, the nav icon (toggle button) can be more prominent */
+  .toggle-btn {
+    display: block;
+    font-size: 30px; /* Increase font size of toggle button for better accessibility */
+    position: absolute;
+    top: 15px; /* Position the toggle button */
+    right: 15px; /* Place toggle button at the top-right corner */
+  }
+}
+
+/* For devices with max-width of 320px */
+@media (max-width: 320px) {
+  .sidebar {
+    width: 60px; /* Reduce sidebar width on the smallest screens */
+  }
+
+  .sidebar.collapsed {
+    width: 50px; /* Keep collapsed width */
+  }
+
+  .sidebar-header {
+    font-size: 12px; /* Further reduce header text */
+  }
+
+  .logo-img {
+    max-width: 80px; /* Shrink logo for very small screens */
+  }
+
+  .icon-container {
+    right: 5px; /* Ensure icon is properly aligned on very small screens */
+  }
+
+  .toggle-btn {
+    font-size: 28px; /* Make the toggle button smaller for very small screens */
+    right: 10px; /* Adjust positioning */
+  }
+}
+
