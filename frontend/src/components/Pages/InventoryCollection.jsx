@@ -1,113 +1,164 @@
-import React, { useEffect, useState } from 'react';
-import { Table, FormControl, InputGroup } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Table, FormControl, InputGroup, FormCheck } from 'react-bootstrap';
+import './InventoryCollection.css'; // Import the external CSS file
+import MonthlyChart from './MonthlyChart';
+
 
 const InventoryCollection = () => {
   const [inventoryData, setInventoryData] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
-  // Fetch the inventory data from localStorage
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem('inventoryData')) || [];
+    const data = JSON.parse(localStorage.getItem('inventoryData')) || [
+      {
+        product: "Warehouse A",
+        sku: "ABC123",
+        basePrice: 100,
+        price: 120,
+        totalStock: 500,
+        available: 200,
+        imageUrl: "", 
+      },
+      {
+        product: "Warehouse B",
+        sku: "XYZ456",
+        basePrice: 150,
+        price: 180,
+        totalStock: 300,
+        available: 150,
+        imageUrl: "", 
+      }
+    ];
     setInventoryData(data);
   }, []);
 
-  // Handle changes in stock value
-  const handleStockChange = (index, value) => {
+  const handleTotalStockChange = (index, value) => {
     const updatedData = [...inventoryData];
-    updatedData[index].stock = value;
-
-    // Update the state
+    updatedData[index].totalStock = value;
     setInventoryData(updatedData);
-
-    // Save updated data to localStorage
     localStorage.setItem('inventoryData', JSON.stringify(updatedData));
   };
 
-  // Handle changes in reserved value
-  const handleReservedChange = (index, value) => {
-    const updatedData = [...inventoryData];
-    updatedData[index].reserved = value;
-
-    // Update the state
-    setInventoryData(updatedData);
-
-    // Save updated data to localStorage
-    localStorage.setItem('inventoryData', JSON.stringify(updatedData));
-  };
-
-  // Handle changes in available value
   const handleAvailableChange = (index, value) => {
     const updatedData = [...inventoryData];
     updatedData[index].available = value;
-
-    // Update the state
     setInventoryData(updatedData);
-
-    // Save updated data to localStorage
     localStorage.setItem('inventoryData', JSON.stringify(updatedData));
   };
 
-  // Filter inventory data based on the search query
+  const handlePriceChange = (index, value) => {
+    const updatedData = [...inventoryData];
+    updatedData[index].price = value;
+    setInventoryData(updatedData);
+    localStorage.setItem('inventoryData', JSON.stringify(updatedData));
+  };
+
+  const handleBasePriceChange = (index, value) => {
+    const updatedData = [...inventoryData];
+    updatedData[index].basePrice = value;
+    setInventoryData(updatedData);
+    localStorage.setItem('inventoryData', JSON.stringify(updatedData));
+  };
+
+  const handleSelectProduct = (sku) => {
+    setSelectedProducts((prevSelected) => {
+      if (prevSelected.includes(sku)) {
+        return prevSelected.filter((productSku) => productSku !== sku);
+      } else {
+        return [...prevSelected, sku];
+      }
+    });
+  };
+
   const filteredData = inventoryData.filter((item) => {
     const query = searchQuery.toLowerCase();
     return (
-      item.location.toLowerCase().includes(query) ||
-      item.stock.toString().includes(query) ||
-      item.reserved.toString().includes(query) ||
-      item.available.toString().includes(query) ||
-      item.sku.toLowerCase().includes(query)
+      (item.product && item.product.toLowerCase().includes(query)) ||
+      (item.sku && item.sku.toLowerCase().includes(query))
     );
   });
+  
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div  style={{display:'flex'}}>
-           <h1>Inventory Table</h1>
-          <div style={{ marginBottom: '15px', marginTop: '15px', float:'right' }}>
-                  <InputGroup className="mb-3" style={{ maxWidth: '300px' }}>
-                    <FormControl
-                      placeholder="Search"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                  </InputGroup>
-          </div>
-        </div>
-      <Table striped bordered hover responsive>
+    <div className="inventory-container">
+      <div className="header">
+        <p>Inventory </p>
+        <InputGroup className="search-bar">
+          <FormControl
+            placeholder="Search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </InputGroup>
+      </div>
+      <div>
+      <MonthlyChart/>
+      </div>
+      
+      <Table striped bordered hover responsive className="inventory-table">
         <thead>
           <tr>
-            <th>Location</th>
-            <th>Stock</th>
-            <th>Reserved</th>
-            <th>Available</th>
+            <th>Select</th> 
+            <th></th> 
+            <th>Product</th>
             <th>SKU</th>
+            <th>Base Price</th>
+            <th>Price</th>
+            <th>Total Stock</th>
+            <th>Available</th>
+            <th>Remaining Stock</th>
           </tr>
         </thead>
         <tbody>
           {filteredData.length === 0 ? (
             <tr>
-              <td colSpan="5" className="text-center">
+              <td colSpan="9" className="text-center">
                 No data available
               </td>
             </tr>
           ) : (
             filteredData.map((item, index) => (
               <tr key={index}>
-                <td>{item.location}</td>
+                <td>
+                  <FormCheck
+                    type="checkbox"
+                    checked={selectedProducts.includes(item.sku)}
+                    onChange={() => handleSelectProduct(item.sku)}
+                  />
+                </td>
+                <td>
+                 
+                  <img 
+                    src={item.imageUrl || "https://via.placeholder.com/100"} 
+                    alt={item.sku} 
+                    style={{ width: '50px', height: '50px', objectFit: 'cover' }} 
+                  />
+                </td>
+                <td>{item.product}</td>
+                <td>{item.sku}</td>
                 <td>
                   <FormControl
                     type="number"
-                    value={item.stock}
-                    onChange={(e) => handleStockChange(index, e.target.value)}
-                    style={{ width: '100px' }}
+                    value={item.basePrice}
+                    onChange={(e) => handleBasePriceChange(index, e.target.value)}
+                    className="input-field"
                   />
                 </td>
                 <td>
                   <FormControl
                     type="number"
-                    value={item.reserved}
-                    onChange={(e) => handleReservedChange(index, e.target.value)}
-                    style={{ width: '100px' }}
+                    value={item.price}
+                    onChange={(e) => handlePriceChange(index, e.target.value)}
+                    className="input-field"
+                  />
+                </td>
+                <td>
+                  <FormControl
+                    type="number"
+                    value={item.totalStock}
+                    onChange={(e) => handleTotalStockChange(index, e.target.value)}
+                    className="input-field"
                   />
                 </td>
                 <td>
@@ -115,15 +166,15 @@ const InventoryCollection = () => {
                     type="number"
                     value={item.available}
                     onChange={(e) => handleAvailableChange(index, e.target.value)}
-                    style={{ width: '100px' }}
+                    className="input-field"
                   />
                 </td>
-                <td>{item.sku}</td>
+                <td>{item.totalStock - item.available}</td> 
               </tr>
             ))
           )}
         </tbody>
-      </Table>
+      </Table> 
     </div>
   );
 };

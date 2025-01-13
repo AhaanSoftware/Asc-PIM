@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.css'
+import './App.css';
 import Sidebar from './components/Layouts/Sidebar';
 import Header from './components/Layouts/Header';
 import Overview from './components/Pages/Overview';
@@ -14,14 +14,23 @@ import SalesOrderManagement from './components/Pages/SalesOrderManagement';
 import SuppliersPerchase from './components/Pages/SuppliersPerchase';
 import UserManagement from './components/Pages/UserManagement';
 import AddProduct from './components/Pages/Productmanagement/AddProduct';
+<<<<<<< HEAD
 import AddCollection from './components/Pages/ProductCollection/AddCollection';
 function App() {
   const [productData, setProductData] = useState([]);
+=======
+
+function App() {
+  // State to manage sidebar collapsed or expanded
+  const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+>>>>>>> bfec37f0d1bd329c13660eb5377f86997f69936b
   return (
     <Router>
       <div className="dashboard-container">
-        <Sidebar />
-        <div className="main-content">
+        {/* Pass state setter function to Sidebar */}
+        <Sidebar setSidebarCollapsed={setSidebarCollapsed} isCollapsed={isSidebarCollapsed} />
+        <div className={`main-content ${isSidebarCollapsed ? "collapsed" : ""}`}>
           <Header />
           <div className="content-wrapper p-4">
             <Routes>
@@ -42,7 +51,7 @@ function App() {
         </div>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

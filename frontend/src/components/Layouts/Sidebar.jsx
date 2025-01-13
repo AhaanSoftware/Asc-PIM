@@ -1,31 +1,53 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import { BsList, BsHouse, BsBox, BsLayers, BsCart, BsGraphUp, BsPeople, BsGear, BsQuestionCircle, BsEnvelope, BsInfoCircle } from "react-icons/bs";
+import {
+  BsList,
+  BsHouse,
+  BsBox,
+  BsLayers,
+  BsCart,
+  BsGraphUp,
+  BsPeople,
+  BsGear,
+  BsQuestionCircle,
+  BsEnvelope,
+  BsInfoCircle,
+} from "react-icons/bs";
+import { IoChevronForwardCircleOutline, IoChevronBackCircleOutline } from 'react-icons/io5'; 
 import "./Sidebar.css";
 import logo from "../image/logo.png";
+import logo2 from "../image/logo2.png"
 
-const Sidebar = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
+const Sidebar = ({ setSidebarCollapsed, isCollapsed }) => {
   const toggleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
+    // Toggle the collapsed state of the sidebar
+    setSidebarCollapsed(!isCollapsed);
   };
 
   return (
     <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
-      {/* Sidebar Header with Logo */}
       <div className="sidebar-header">
         <img
-          src={logo}
+          src={isCollapsed ? logo2 : logo} // Conditionally render logo based on collapse state
           alt="Logo"
           className={`logo-img ${isCollapsed ? "collapsed-logo" : ""}`}
         />
-        <button className="toggle-btn" onClick={toggleSidebar}>
-          <BsList />
-        </button>
+
+        <div className="icon-container">
+          {isCollapsed ? (
+            <IoChevronForwardCircleOutline
+              className="toggle-icon-f"
+              onClick={toggleSidebar} // Clicking the icon will toggle the sidebar
+            />
+          ) : (
+            <IoChevronBackCircleOutline
+              className="toggle-icon-b"
+              onClick={toggleSidebar} // Clicking the icon will toggle the sidebar
+            />
+          )}
+        </div>
       </div>
 
-      {/* Sidebar Navigation Menu */}
       <ul className="nav flex-column">
         <li className="nav-item">
           <NavLink to="/" className="nav-link" activeClassName="active" exact>
