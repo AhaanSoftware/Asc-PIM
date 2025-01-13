@@ -1,13 +1,8 @@
-/* InventoryCollection.css */
-
-/* Container style */
 .inventory-container {
     width: 100%;
     margin: 0 auto;
-    padding: 20px;
   }
   
-  /* Header section containing title and search input */
   .header {
     display: flex;
     justify-content: space-between;
@@ -17,11 +12,15 @@
   .search-bar {
     max-width: 300px;
   }
+<<<<<<< HEAD
  
   /* Table style */
+=======
+  
+>>>>>>> 55a4638107b2341748d470e3d9c1ad467836260f
   .inventory-table {
     width: 100%;
-    border-collapse: collapse; /* Remove space between borders if there are any */
+    border-collapse: collapse; 
   }
   
   .inventory-table th,
@@ -29,12 +28,11 @@
     text-align: center;
     padding: 12px;
     font-size: 14px;
-    border: none; /* Remove borders from the table cells */
+    border: none; 
   }
   
-  /* Remove the hover effect */
   .inventory-table tbody tr:hover {
-    background-color: transparent; /* Remove hover effect */
+    background-color: transparent; 
   }
   
   .input-field {

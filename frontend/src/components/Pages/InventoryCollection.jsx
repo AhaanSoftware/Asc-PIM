@@ -12,22 +12,22 @@ const InventoryCollection = () => {
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('inventoryData')) || [
       {
-        location: "Warehouse A",
+        product: "Warehouse A",
         sku: "ABC123",
         basePrice: 100,
         price: 120,
         totalStock: 500,
         available: 200,
-        imageUrl: "", // Image URL for this product
+        imageUrl: "", 
       },
       {
-        location: "Warehouse B",
+        product: "Warehouse B",
         sku: "XYZ456",
         basePrice: 150,
         price: 180,
         totalStock: 300,
         available: 150,
-        imageUrl: "https://via.placeholder.com/100", // Image URL for this product
+        imageUrl: "", 
       }
     ];
     setInventoryData(data);
@@ -74,14 +74,11 @@ const InventoryCollection = () => {
   const filteredData = inventoryData.filter((item) => {
     const query = searchQuery.toLowerCase();
     return (
-      item.location.toLowerCase().includes(query) ||
-      item.totalStock.toString().includes(query) ||
-      item.available.toString().includes(query) ||
-      item.sku.toLowerCase().includes(query) ||
-      item.price.toString().includes(query) ||
-      item.basePrice.toString().includes(query)
+      (item.product && item.product.toLowerCase().includes(query)) ||
+      (item.sku && item.sku.toLowerCase().includes(query))
     );
   });
+  
 
   return (
     <div className="inventory-container">
@@ -131,14 +128,14 @@ const InventoryCollection = () => {
                   />
                 </td>
                 <td>
-                  {/* Show the product image or default logo */}
+                 
                   <img 
                     src={item.imageUrl || "https://via.placeholder.com/100"} 
                     alt={item.sku} 
                     style={{ width: '50px', height: '50px', objectFit: 'cover' }} 
                   />
                 </td>
-                <td>{item.location}</td>
+                <td>{item.product}</td>
                 <td>{item.sku}</td>
                 <td>
                   <FormControl
@@ -172,14 +169,12 @@ const InventoryCollection = () => {
                     className="input-field"
                   />
                 </td>
-                <td>{item.totalStock - item.available}</td> {/* Remaining Stock */}
+                <td>{item.totalStock - item.available}</td> 
               </tr>
             ))
           )}
         </tbody>
-      </Table>
-
-      
+      </Table> 
     </div>
   );
 };
