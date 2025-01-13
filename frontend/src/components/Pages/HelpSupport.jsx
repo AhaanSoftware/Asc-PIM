@@ -12,6 +12,7 @@ const HelpSupport = () => {
   const [collectionsData, setCollectionsData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCollections, setSelectedCollections] = useState([]);
+  const [selectAll, setSelectAll] = useState(false); // state for select all checkbox
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("collectionsData")) || [
@@ -43,6 +44,15 @@ const HelpSupport = () => {
     });
   };
 
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedCollections([]);
+    } else {
+      setSelectedCollections(collectionsData.map((item) => item.id));
+    }
+    setSelectAll(!selectAll);
+  };
+
   const filteredData = collectionsData.filter((item) => {
     const query = searchQuery.toLowerCase();
     return (
@@ -63,7 +73,7 @@ const HelpSupport = () => {
         <div className="table-content-collection">
           <div className="right-side-search">
             <div className="left-side-all">
-              <p>All</p>
+              <p className="underline">ALL</p>
             </div>
             <InputGroup className="search-sort-group">
               <FormControl
@@ -72,63 +82,67 @@ const HelpSupport = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="search-bar"
               />
-              <Button variant="outline-secondary" className="sort-button">
+              <button variant="outline-secondary" className="sort-button">
                 Sort
-              </Button>
+              </button>
             </InputGroup>
           </div>
-        <div className="table-collection">
-          <Table
-            striped
-            bordered
-            hover
-            responsive
-            className="collections-table"
-          >
-            <thead>
-              <tr>
-                <th>
-                  <FormCheck type="checkbox" />
-                </th>
-                <th>Image</th>
-                <th>Title</th>
-                <th>Short Description</th>
-                <th>Total Items</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredData.length === 0 ? (
+          <div className="table-collection">
+            <Table
+              striped
+              bordered
+              hover
+              responsive
+              className="collections-table"
+            >
+              <thead>
                 <tr>
-                  <td colSpan="5" className="text-center">
-                    No data available
-                  </td>
+                  <th>
+                    <FormCheck
+                      type="checkbox"
+                      checked={selectAll}
+                      onChange={handleSelectAll}
+                    />
+                  </th>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <th>Short Description</th>
+                  <th>Total Items</th>
                 </tr>
-              ) : (
-                filteredData.map((item) => (
-                  <tr key={item.id}>
-                    <td>
-                      <FormCheck
-                        type="checkbox"
-                        checked={selectedCollections.includes(item.id)}
-                        onChange={() => handleSelectCollection(item.id)}
-                      />
+              </thead>
+              <tbody>
+                {filteredData.length === 0 ? (
+                  <tr>
+                    <td colSpan="5" className="text-center">
+                      No data available
                     </td>
-                    <td>
-                      <img
-                        src={item.imageUrl || "https://via.placeholder.com/100"}
-                        alt={item.title}
-                        className="collection-image"
-                      />
-                    </td>
-                    <td>{item.title}</td>
-                    <td>{item.shortDescription}</td>
-                    <td>{item.totalItems}</td>
                   </tr>
-                ))
-              )}
-            </tbody>
-          </Table>
-        </div>
+                ) : (
+                  filteredData.map((item) => (
+                    <tr key={item.id}>
+                      <td>
+                        <FormCheck
+                          type="checkbox"
+                          checked={selectedCollections.includes(item.id)}
+                          onChange={() => handleSelectCollection(item.id)}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={item.imageUrl || "https://via.placeholder.com/100"}
+                          alt={item.title}
+                          className="collection-image"
+                        />
+                      </td>
+                      <td>{item.title}</td>
+                      <td>{item.shortDescription}</td>
+                      <td>{item.totalItems}</td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </Table>
+          </div>
         </div>
       </div>
     </div>
