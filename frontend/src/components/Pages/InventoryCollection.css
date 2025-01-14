@@ -2,15 +2,24 @@
     width: 100%;
     margin: 0 auto;
   }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
+  .heading {
     margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  .heading p{
+    font-weight:350;
+  }
+  .header {
+    background-color: transparent;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: none;
   }
   
   .search-bar {
+    align-items: right;
     max-width: 300px;
+
   }
  
   /* Table style */
