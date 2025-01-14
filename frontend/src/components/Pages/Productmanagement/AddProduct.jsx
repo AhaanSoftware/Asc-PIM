@@ -6,13 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import "react-quill/dist/quill.snow.css";
 import "./AddProduct.css";
-<<<<<<< HEAD
+
 
 const AddProduct = ({ setProductData }) => {
 
   const navigate = useNavigate();
-=======
->>>>>>> bfec37f0d1bd329c13660eb5377f86997f69936b
 
   const {
     register,

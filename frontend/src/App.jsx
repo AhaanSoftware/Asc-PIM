@@ -14,17 +14,13 @@ import SalesOrderManagement from './components/Pages/SalesOrderManagement';
 import SuppliersPerchase from './components/Pages/SuppliersPerchase';
 import UserManagement from './components/Pages/UserManagement';
 import AddProduct from './components/Pages/Productmanagement/AddProduct';
-<<<<<<< HEAD
+
 import AddCollection from './components/Pages/ProductCollection/AddCollection';
 function App() {
   const [productData, setProductData] = useState([]);
-=======
 
-function App() {
-  // State to manage sidebar collapsed or expanded
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
 
->>>>>>> bfec37f0d1bd329c13660eb5377f86997f69936b
   return (
     <Router>
       <div className="dashboard-container">
