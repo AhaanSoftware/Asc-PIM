@@ -14,6 +14,8 @@ import {
   BsInfoCircle,
 } from "react-icons/bs";
 import { IoChevronForwardCircleOutline, IoChevronBackCircleOutline } from 'react-icons/io5'; 
+import { FiAlignLeft, FiAlignRight } from "react-icons/fi";
+
 import "./Sidebar.css";
 import logo from "../image/logo.png";
 import logo2 from "../image/logo2.png"

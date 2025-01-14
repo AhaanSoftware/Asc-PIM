@@ -1,134 +1,70 @@
+.help-support-container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
 
-.collections-container {
-    display: flex;
-    color: black;
-  }
-  
-  .left-side {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  .collections-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  .collections-table th,
-  .collections-table td {
-    padding: 10px;
-    text-align: left;
-  }
-  .create-collection-row {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 10px;
-  }
-  
-  
+}
+
+.collections-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.create-collection-link {
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.search-bar-wrapper {
+  margin-bottom: 15px;
+}
+
+.search-bar {
+  border-radius: 5px;
+}
+
+.sort-button {
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.collections-table {
+  margin-top: 20px;
+}
+
+.table-primary th {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+}
+
+.collection-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
   .create-collection-link {
-    text-decoration: none;
-    color: black;
-    font-size: 12px;
-    border: 1px solid rgb(199, 195, 195);
-    border-radius: 4px;
-    padding: 6px;
-    text-align: center;
-    display: block;
+    font-size: 0.9rem;
   }
-  
-  .collections-table td {
-    border-top: 1px solid #ddd;
+
+  .collections-label {
+    font-size: 1.2rem;
   }
-  
+
   .collection-image {
     width: 50px;
     height: 50px;
-    object-fit: cover;
   }
+}
+a.btn.btn-outline-primary.create-collection-link{
+  border-color: #283890;
+  color: #283890;
+  &:hover{
+    background-color: #fff;
+    border-color: #283890;
   
-  .right-side {
-    flex: 0 0 250px;
-    display: flex;
-    flex-direction: column;
   }
-  .create-collection-link:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .search-sort-group {
-    display: flex;
-  }
-  
-  
-  .sort-button {
-    background-color: white;
-    border: .25px solid #c9c9c9;
-    border-radius:4px;
-    color: black;
-    padding:2px;
-  }
-  
-  
-  .table-content-collection{
-    border:1px solid #dddd;
-    border-radius: 18px;
-  }
-.right-side-search {
-   
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    border-bottom: 1px solid #dddd;  
-    padding:10px 10px 2px 20px;
-  }
-  
-  .left-side-all p {
-    margin: 0; 
-    font-size: 12px;    
-  }
-  .search-sort-group {
-    display: flex;
-    align-items: center; 
-    flex: 1; 
-    justify-content: flex-end; 
-  }
-  
-  .search-bar {
-    flex: 1;
-    margin-right: 10px; 
-    padding: 2px;;
-  }
-  
-
-  .table-collection{
-    padding:10px; 
-    background-color: #f1f1f1;
-
-  }
-  .left-side-all p {
-    margin: 0;
-    padding:0;
-    font-size: 15px;
-    font-weight: 500;
-    display: inline-block;
-    position: relative; 
-    padding-bottom: 2px; 
-  }
-  
-  .underline {
-    text-decoration: none; 
-    position: relative;
-  }
-  
-  .underline::after {
-    content: ''; 
-    position: absolute;
-    bottom: 0; 
-    left: 0;
-    width: 100%; 
-    height: 3px; 
-    background-color: black; 
-  }
-  
-  
+}
