@@ -82,8 +82,13 @@ const InventoryCollection = () => {
 
   return (
     <div className="inventory-container">
-      <div className="header">
+      <div className="heading">
         <p>Inventory </p>
+      </div>
+      <div>
+      <MonthlyChart/>
+      </div>
+      <div className="header">
         <InputGroup className="search-bar">
           <FormControl
             placeholder="Search"
@@ -92,10 +97,6 @@ const InventoryCollection = () => {
           />
         </InputGroup>
       </div>
-      <div>
-      <MonthlyChart/>
-      </div>
-      
       <Table striped bordered hover responsive className="inventory-table">
         <thead>
           <tr>
