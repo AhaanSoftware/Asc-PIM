@@ -168,4 +168,15 @@ hr {
     right: 10px; /* Adjust positioning */
   }
 }
-
+svg.toggle-icon-b{
+  color: #ffffff;
+  background-color: #283890;
+  border-radius: 50%;
+  font-size: 22px;
+}
+svg.toggle-icon-f{
+  color: #ffffff;
+  background-color: #283890;
+  border-radius: 50%;
+  font-size: 22px;
+}

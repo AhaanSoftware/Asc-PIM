@@ -77,3 +77,34 @@
 }
 
 
+.banner {
+  height: 350px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../image/banner.png);
+  background-blend-mode: darken;
+  box-shadow: 0 2px 8px 0 rgba(123, 157, 251, 0.19), 0 3px 10px 0 rgba(123, 157, 251, 0.19);
+  border-radius: 20px;
+
+}
+.banner h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+}
+button.btn.btn-outline-primary{
+  border-color: #F78D1F;
+  color: #F78D1F;
+}
+button.btn.btn-outline-primary:hover{
+  border-color: #F78D1F;
+  background-color: #F78D1F;
+  color: #fff;
+}
+svg.svg-inline--fa.fa-plus.me-2 {
+  font-weight: 900 !important;
+} 
+.content-wrapper.p-4{
+  padding: 0px 30px !important;
+}
