@@ -1,0 +1,25 @@
+.box-container.card {
+    border: none;
+}
+.FaCaravan{
+    color: #283890;
+}
+.IoMdTime{
+    color: #F78D1F;
+    
+}
+.FaRegCheckCircle{
+    color: #F78D1F;
+}
+.LuCircleDollarSign{
+    
+    color: #283890;
+}
+p.text-muted.card-text{
+    font-weight: 700;
+    color: #2e2e2e !important;
+    text-transform: capitalize;
+    font-size: 18px;
+    padding-top: 10px;
+    letter-spacing: 2px !important;
+}

@@ -26,6 +26,8 @@ const AddCollection = () => {
     reset();
   };
 
+  
+
   return (
     <div className="container mt-5">
       <form onSubmit={handleSubmit(onSubmit)} className="form-container p-4">

@@ -3,13 +3,16 @@ import { useForm, useFieldArray } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import ReactQuill from "react-quill";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlus,
+  faTrash,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
 import "react-quill/dist/quill.snow.css";
+import { Button } from "react-bootstrap";
 import "./AddProduct.css";
 
-
 const AddProduct = ({ setProductData }) => {
-
   const navigate = useNavigate();
 
   const {
@@ -62,10 +65,19 @@ const AddProduct = ({ setProductData }) => {
     name: "variants",
   });
 
+  const handleClick = () => {
+    navigate("/product-management");
+  };
+
   return (
     <div className="container mt-5">
       <form onSubmit={handleSubmit(onSubmit)} className="form-container p-4">
-        <h5 className="mb-4">Add Product</h5>
+        <div className="home-container d-flex justify-content-left align-items-left mb-3">
+          <Button className="glow-button" onClick={handleClick}>
+            <FontAwesomeIcon icon={faArrowLeft} className="me-2" />
+           Back to Add Product
+          </Button>
+        </div>
 
         <div className="row">
           <div className="col-md-9">

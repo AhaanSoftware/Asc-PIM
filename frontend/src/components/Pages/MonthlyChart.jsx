@@ -14,6 +14,7 @@ import {
 import { LuCircleDollarSign } from 'react-icons/lu';
 import { FaRegCheckCircle, FaCaravan } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
+import './MonthlyChart.css';
 
 // Register chart elements
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
@@ -25,26 +26,26 @@ const stocksData = {
     {
       label: 'Total Stocks',
       data: [250, 350, 300, 450, 500, 400, 650, 750, 700, 600, 500, 450],
-      backgroundColor: 'rgba(44, 161, 240, 0.7)',
+      backgroundColor: '#cbcbcb',
       borderWidth: 0,
       borderRadius: 20,
-      barThickness: 8,
+      barThickness: 10,
     },
     {
       label: 'Available Stocks',
       data: [300, 400, 350, 500, 600, 450, 700, 800, 750, 650, 550, 500],
-      backgroundColor: 'rgba(51, 39, 209, 1)',
+      backgroundColor: '#F78D1F ',
       borderWidth: 0,
       borderRadius: 20,
-      barThickness: 8,
+      barThickness: 10,
     },
     {
       label: 'Remaining Stocks',
       data: [300, 400, 350, 500, 600, 450, 700, 800, 750, 650, 550, 500],
-      backgroundColor: 'rgba(166, 75, 252, 0.7)',
+      backgroundColor: '#283890',
       borderWidth: 0,
       borderRadius: 20,
-      barThickness: 8,
+      barThickness: 10,
     },
   ],
 };
@@ -56,7 +57,7 @@ const MonthlyChart = () => {
         <Row className="w-100">
           {/* Chart Column with adjusted padding */}
           <Col xs={12} md={7} className="mb-4" > {/* Adjust top and bottom padding here */}
-            <Card className="box-container" style={{ height: '270px' }}> 
+            <Card className="box-container" style={{ height: '265px' }}> 
               <Card.Body style={{ paddingTop: '0px'}}>
               <Card.Title className="text-center">Monthly Stocks Chart</Card.Title>
                 <Bar
@@ -84,7 +85,7 @@ const MonthlyChart = () => {
                       },
                     },
                   }}
-                  height={115}
+                  height={100}
                 />
               </Card.Body>
             </Card>
@@ -98,10 +99,10 @@ const MonthlyChart = () => {
                 <Card className="box-container" style={{ height: '120px' }}>
                   <Card.Body style={{ paddingTop: '5px', paddingBottom:'5px'}}>
                     <Card.Title className="d-flex justify-content-between align-items-center text-primary">
-                      <span>$67.6k</span>
-                      <LuCircleDollarSign size={30} />
+                      <span className='LuCircleDollarSign'>$67.6k</span>
+                      <LuCircleDollarSign size={30} className='LuCircleDollarSign' />
                     </Card.Title>
-                    <Card.Text className="text-muted">Income</Card.Text>
+                    <Card.Text className="text-muted">Revenue</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
@@ -111,10 +112,10 @@ const MonthlyChart = () => {
                 <Card className="box-container" style={{ height: '120px' }}>
                   <Card.Body style={{ paddingTop: '5px', paddingBottom:'5px'}}>
                     <Card.Title className="d-flex justify-content-between align-items-center text-success">
-                      <span>12.6k</span>
-                      <FaRegCheckCircle size={30} />
+                      <span className='FaRegCheckCircle'>12.6k</span>
+                      <FaRegCheckCircle size={30} className='FaRegCheckCircle' />
                     </Card.Title>
-                    <Card.Text className="text-muted">Completed</Card.Text>
+                    <Card.Text className="text-muted">Finalized</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
@@ -126,10 +127,10 @@ const MonthlyChart = () => {
                 <Card className="box-container" style={{ height: '120px' }}>
                   <Card.Body style={{ paddingTop: '5px', paddingBottom:'5px'}}>
                     <Card.Title className="d-flex justify-content-between align-items-center text-primary">
-                      <span>143</span>
-                      <IoMdTime size={30} />
+                      <span className='IoMdTime'>143</span>
+                      <IoMdTime size={30} className='IoMdTime' />
                     </Card.Title>
-                    <Card.Text className="text-muted">Pending</Card.Text>
+                    <Card.Text className="text-muted">Pending Work</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
@@ -139,10 +140,10 @@ const MonthlyChart = () => {
                 <Card className="box-container" style={{ height: '120px' }}>
                   <Card.Body style={{ paddingTop: '5px', paddingBottom:'5px'}}>
                     <Card.Title className="d-flex justify-content-between align-items-center text-success">
-                      <span>651</span>
-                      <FaCaravan size={30} />
+                      <span className='FaCaravan'>651</span>
+                      <FaCaravan size={30} className='FaCaravan' />
                     </Card.Title>
-                    <Card.Text className="text-muted">Dispatch</Card.Text>
+                    <Card.Text className="text-muted">The Dispatch</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>

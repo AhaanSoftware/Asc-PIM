@@ -62,15 +62,16 @@
 }
 
 .nav-link.active {
-  background-color: #283890; 
-  color: #F78D1E !important; 
+  background-color: #fff; 
+  color: #283890 !important; 
   font-weight: 600;
   font-size: 12px;
+  box-shadow: 0 2px 8px 0 rgba(123, 157, 251, 0.19), 0 3px 10px 0 rgba(123, 157, 251, 0.19);
+  border-radius: 10px;
+
 }
 
-hr {
-  color: #F78D1E;
-}
+
 
 .sidebar-header {
   align-items: center;
@@ -179,4 +180,8 @@ svg.toggle-icon-f{
   background-color: #283890;
   border-radius: 50%;
   font-size: 22px;
+}
+ul.nav.flex-column{
+  margin-top: 45px;
+  margin-left: 5px;
 }
