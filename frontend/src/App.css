@@ -10,13 +10,11 @@ body {
 
 .sidebar {
   width: 240px;
-  background-color: #ffffff !important;
+  background-color: #FAFBFC !important;
   color: #000000 !important; ;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 2px 8px 0 rgba(123, 157, 251, 0.19), 0 3px 10px 0 rgba(123, 157, 251, 0.19);
-  
 
 }
 
@@ -49,13 +47,16 @@ body {
   font-weight: 600;
   font-size: 12px;
   text-transform: uppercase;
+  margin-top: 15px;
 }
 
 .nav-link:hover {
-  background-color: #283890 !important;
-  color: #F28D25 !important;
+  background-color: #fff; 
+  color: #283890 !important; 
   font-weight: 600;
   font-size: 12px;
+  box-shadow: 0 2px 8px 0 rgba(123, 157, 251, 0.19), 0 3px 10px 0 rgba(123, 157, 251, 0.19);
+  border-radius: 10px;
 }
 
 .main-content {

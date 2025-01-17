@@ -19,6 +19,7 @@ table {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; 
     padding-top: 15px !important;
     padding-bottom: 15px !important;
+    font-size: 12px;
   }
 
   /* Ensure tabs are horizontal */

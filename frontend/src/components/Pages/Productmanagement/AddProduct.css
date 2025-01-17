@@ -72,3 +72,37 @@ h5.mb-4{
   color: #283890 ;
   font-weight: 500;
 }
+.home-container {
+  background-color: #f8f9fa;
+}
+
+button.glow-button.btn.btn-primary {
+  border: 1px solid #2838903f !important;
+  background: none !important;
+  background-color: #283890 !important;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  animation: glowing 1.5s infinite ease-in-out;
+}
+
+button.glow-button.btn.btn-primary:hover {
+  color: #fff; /* A slightly darker blue on hover */
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #2838903f, 0 0 10px #2838903f, 0 0 15px #283890a6;
+  }
+  50% {
+    box-shadow: 0 0 10px #2838903f, 0 0 20px #2838903f, 0 0 30px #283890a6;
+  }
+  100% {
+    box-shadow: 0 0 5px #2838903f, 0 0 10px #2838903f, 0 0 15px #283890a6;
+  }
+}
+
+

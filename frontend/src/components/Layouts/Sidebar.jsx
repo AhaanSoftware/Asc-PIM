@@ -67,7 +67,7 @@ const Sidebar = ({ setSidebarCollapsed, isCollapsed }) => {
             {!isCollapsed && "Product Management"}
           </NavLink>
         </li>
-        <hr />
+        
         <li className="nav-item">
           <NavLink
             to="/inventory-collection"
@@ -108,7 +108,7 @@ const Sidebar = ({ setSidebarCollapsed, isCollapsed }) => {
             {!isCollapsed && "Suppliers Perchase"}
           </NavLink>
         </li>
-        <hr />
+        
         <li className="nav-item">
           <NavLink
             to="/help-support"
@@ -129,7 +129,7 @@ const Sidebar = ({ setSidebarCollapsed, isCollapsed }) => {
             {!isCollapsed && "User Management"}
           </NavLink>
         </li>
-        <hr />
+        
         <li className="nav-item">
           <NavLink to="/about" className="nav-link" activeClassName="active">
             <BsInfoCircle className="nav-icon" />

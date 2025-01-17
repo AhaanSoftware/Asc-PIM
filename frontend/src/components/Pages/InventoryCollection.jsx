@@ -108,7 +108,7 @@ const InventoryCollection = () => {
             <th>Price</th>
             <th>Total Stock</th>
             <th>Available</th>
-            <th>Remaining Stock</th>
+            <th>Stock</th>
           </tr>
         </thead>
         <tbody>
